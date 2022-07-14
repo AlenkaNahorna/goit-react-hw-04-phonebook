@@ -10,9 +10,15 @@ import {
 import { Label } from 'components/ui/Label/Label';
 import { PrimaryButton } from 'components/ui/buttons/PrimaryButton';
 
+const pattern = /^[\d+][\d()-]{4,14}\d$/i;
 const schema = yup.object().shape({
   name: yup.string().required(),
-  number: yup.number().min(5).required(),
+  number: yup
+    .number()
+    .required()
+    .test({
+      test: value => pattern.test(value),
+    }),
 });
 
 const FormError = ({ name }) => {
