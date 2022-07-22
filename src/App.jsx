@@ -3,7 +3,7 @@ import { Notify } from 'notiflix';
 import { Box } from 'styles/Box';
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
-import { Filter } from 'components/ui/Filter/Filter';
+import { Filter } from 'components/Filter/Filter';
 import { MainTitle, SubTitle } from 'components/ui/titles';
 
 export class App extends Component {
@@ -21,7 +21,7 @@ export class App extends Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(_, prevState) {
     if (this.state.contacts !== prevState) {
       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
     }

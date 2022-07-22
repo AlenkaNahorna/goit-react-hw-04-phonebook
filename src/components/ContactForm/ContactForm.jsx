@@ -31,11 +31,6 @@ const FormError = ({ name }) => {
 };
 
 export class ContactForm extends Component {
-  state = {
-    name: '',
-    number: '',
-  };
-
   handleSubmit = (values, { resetForm }) => {
     const newContact = {
       id: nanoid(6),
@@ -49,7 +44,7 @@ export class ContactForm extends Component {
   render() {
     return (
       <Formik
-        initialValues={this.state}
+        initialValues={{ name: '', number: '' }}
         validationSchema={schema}
         onSubmit={this.handleSubmit}
       >
