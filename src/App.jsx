@@ -64,7 +64,7 @@ export class App extends Component {
         m="0px auto"
         backgroundColor="secondaryColorBlue"
         width="100%"
-        height="100%"
+        minHeight="100vh"
       >
         <MainTitle title="Phonebook" />
 
