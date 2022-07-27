@@ -21,7 +21,6 @@ export function App() {
   };
 
   const handlerSubmit = data => {
-    console.log(data);
     contacts.find(contact => contact.name === data.name)
       ? Notify.warning(`${data.name} is already in contacts`)
       : setContacts(prevContacts => [...prevContacts, data]);
